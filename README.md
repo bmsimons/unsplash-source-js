@@ -2,7 +2,7 @@
 
 A javascript wrapper for the [Unsplash Source API](https://source.unsplash.com/). Get random Unsplash photos by keyword, location, category, user, or ID.
 
-[ ![Codeship Status for CrewLabs/unsplash-source-js](https://codeship.com/projects/668ef1e0-6255-0133-355b-1af77e49650b/status?branch=master)](https://codeship.com/projects/112623)
+This fork contains extra prototype functions to provide extra inline image editing functionality.
 
 ## Usage
 
