@@ -2,14 +2,22 @@
 
 A javascript wrapper for the [Unsplash Source API](https://source.unsplash.com/). Get random Unsplash photos by keyword, location, category, user, or ID.
 
-This fork contains extra prototype functions to provide extra inline image editing functionality.
-
 ## Usage
 
-Include `unsplash-source.js` or `unsplash-source.min.js` in your page:
+Install `unsplash-source-node-js` with:
 
-```html
-<script src="/js/unsplash-source.js"></script>
+```bash
+npm install unsplash
+```
+
+You can require `unsplash-source-node-js` like this:
+
+```javascript
+const UnsplashSource = require('unsplash-source-node-js');
+
+// Or you can require the UnsplashPhoto object directly:
+
+const UnsplashPhoto = require('unsplash-source-node-js').UnsplashPhoto;
 ```
 
 Then create the photo you want using any of the chainable methods below, calling `fetch` as the last step to return the photo's URL.
@@ -38,7 +46,7 @@ Resize operations (`width`, `height`, `size`) maintain the aspect ratio of the o
 Get a random photo (the Unsplash Source API defaults to a width of 1080px):
 
 ```js
-var photo = new UnsplashPhoto();
+var photo = new UnsplashSource.UnsplashPhoto();
 
 photo.fetch(); // => "https://source.unsplash.com/random"
 ```
@@ -46,7 +54,7 @@ photo.fetch(); // => "https://source.unsplash.com/random"
 Get a random featured photo that rotates weekly, cropped to `800px` x `600px`:
 
 ```js
-var photo = new UnsplashPhoto();
+var photo = new UnsplashSource.UnsplashPhoto();
 
 photo.randomize("weekly")
      .size(800, 600)
@@ -56,7 +64,7 @@ photo.randomize("weekly")
 Get a random photo from photographer [Jared Erondu](https://unsplash.com/erondu) cropped to `2048px` x `1200px`, that changes once a day:
 
 ```js
-var photo = new UnsplashPhoto();
+var photo = new UnsplashSource.UnsplashPhoto();
 
 photo.all()
      .fromUser("erondu")
@@ -69,7 +77,7 @@ photo.all()
 Get a random nature photo of trees and water from the 'all' feed, cropped to `1000px` x `1200px`:
 
 ```js
-var photo = new UnsplashPhoto();
+var photo = new UnsplashSource.UnsplashPhoto();
 
 photo.all()
      .fromCategory("nature")
@@ -81,28 +89,8 @@ photo.all()
 Get a specific photo (the photo ID matches the photo ID from unsplash.com):
 
 ```js
-photo = new UnsplashPhoto();
+photo = new UnsplashSource.UnsplashPhoto();
 
 photo.find("oMpAz-DN-9I")
      .fetch(); // => "https://source.unsplash.com/oMpAz-DN-9I"
-```
-
-## Development
-
-To contribute, make sure [Node](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) are installed. Then:
-
-```sh
-git clone ..
-
-npm install
-grunt test // => should all pass
-
-// make your changes to the `/src` folder
-// add tests to `/tests`
-
-grunt test // => should all pass
-
-grunt build // => creates a bundled version of the script
-
-git commit ..
 ```
