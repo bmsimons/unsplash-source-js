@@ -217,6 +217,7 @@ UnsplashPhoto.prototype._appendRandomization = function (includeRandomPath) {
  * @return {String} the photo URL
  */
 UnsplashPhoto.prototype.fetch = function () {
+    this.url = "https://source.unsplash.com";
     if (!!this.id) {
         this.url += "/" + this.id;
         this._appendDimensions();
