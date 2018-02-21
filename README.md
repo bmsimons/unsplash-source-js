@@ -28,10 +28,10 @@ Method | Arguments | Example | Description
 `width`|`width`|`photo.width(2000)`|Sets the width in pixels
 `height`|`height`|`photo.height(2000)`|Sets the height in pixels
 `size`|`width, height`|`photo.size(1080,800)`|Shorthand for setting the width and height in pixels
-`randomize`|`null || "daily" || "weekly"`|`photo.randomize("weekly")`|Sets the randomization interval
+`randomize`|`null or "daily" or "weekly"`|`photo.randomize("weekly")`|Sets the randomization interval
 `fromUser`|`"username"`|`photo.fromUser("erondu")`|Limits to a specific photographer
 `fromCategory`|`"category"`|`photo.fromCategory("nature")`|Limits to a specific category
-`of`|`"keyword" || [arrayOfKeywords]`|`photo.of("dog")`|Limits to tags or locations matching the keywords
+`of`|`[arrayOfKeywords] or "keyword"`|`photo.of("dog")`|Limits to tags or locations matching the keywords
 `all`||`photo.all()`|Searches for all photos, instead of just featured photos
 `fetch`||`photo.fetch()`|Returns the configured URL.
 
